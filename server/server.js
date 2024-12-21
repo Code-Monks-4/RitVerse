@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 const buySellRoutes = require('./routes/buySellRoutes');
 const lostFoundRoutes = require('./routes/lostFoundRoutes');
+const connectRoutes = require('./routes/connectRoutes');
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s
 
 app.use('/api/buySell', buySellRoutes);
 app.use('/api/lostFound', lostFoundRoutes);
+app.use('/api/session',connectRoutes);
 
 app.get('/', (req, res) => {
     res.send('Server is running successfully!');
