@@ -5,6 +5,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const buySellRoutes = require('./routes/buySellRoutes');
+const lostFoundRoutes = require('./routes/lostFoundRoutes');
+const connectRoutes = require('./routes/connectRoutes');
 
 dotenv.config();
 
@@ -17,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/Game');
 
 app.use('/api/buySell', buySellRoutes);
+app.use('/api/lostFound', lostFoundRoutes);
+app.use('/api/session',connectRoutes);
 
 app.get('/', (req, res) => {
     res.send('Server is running successfully!');
