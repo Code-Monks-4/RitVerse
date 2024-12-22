@@ -12,7 +12,8 @@ import Footer from "./components/Footer"; // Import Footer
 import { initializeAuth } from './redux/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import BuyAndSell from "./Pages/BuyAndSell";
+import BuySell from "./Pages/BuySell";
+import Sell from "./Pages/Sell";
 const App = () => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.auth);
@@ -30,9 +31,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/sell" element={<Sell/>} />
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/sign-up" element={<SignupForm />} />
-          <Route path="/services/buy-sell" element={<BuyAndSell />} />
+          <Route path="/services/buy-sell" element={<BuySell />} />
           <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}
         />
           <Route path="/login" element={<LoginForm />} />
