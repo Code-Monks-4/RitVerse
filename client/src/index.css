@@ -1,3 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+:root {
+    --bg-color: #0d0d0d; 
+    --object-bg: #191919; 
+    --text-color: #ffffff; 
+  }
+  
+
+  @keyframes fill {
+    0% {
+      width: 25%;
+    }
+    25% {
+      width: 50%;
+    }
+    50% {
+      width: 75%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .animate-fill {
+    animation: fill 1s ease-out forwards;
+  }
+  
+  
+  
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Custom scrollbar styles for Webkit browsers */
+/* Custom scrollbar styles for Webkit browsers */
+textarea::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* White scrollbar thumb */
+  border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #333333; /* Dark background for scrollbar track */
+}
+
