@@ -4,9 +4,6 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const buySellRoutes = require('./routes/buySellRoutes');
-const lostFoundRoutes = require('./routes/lostFoundRoutes');
-const connectRoutes = require('./routes/connectRoutes');
 
 dotenv.config();
 
@@ -16,8 +13,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/Game');
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/RitVerse');
 
+const authRoutes = require('./routes/authRoutes'); \
+const buySellRoutes = require('./routes/buySellRoutes');
+const lostFoundRoutes = require('./routes/lostFoundRoutes');
+const connectRoutes = require('./routes/connectRoutes');
+
+app.use('/api/auth', authRoutes);
 app.use('/api/buySell', buySellRoutes);
 app.use('/api/lostFound', lostFoundRoutes);
 app.use('/api/session',connectRoutes);
