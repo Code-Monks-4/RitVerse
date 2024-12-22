@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/RitVerse');
+        await mongoose.connect('mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/RitVerse');
         console.log('MongoDB connected successfully');
     } catch (error) {
         console.error('Error connecting to MongoDB:', error.message);
@@ -22,10 +22,10 @@ const connectDB = async () => {
     }
 };
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 connectDB(); 
->>>>>>> b6a48eccfd180421db4cd2fb87bd2105476a39e6
+// >>>>>>> b6a48eccfd180421db4cd2fb87bd2105476a39e6
 const authRoutes = require('./routes/authRoutes');
 const buySellRoutes = require('./routes/buySellRoutes');
 const lostFoundRoutes = require('./routes/lostFoundRoutes');
