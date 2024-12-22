@@ -24,7 +24,7 @@ const schema = yup.object({
 }).required();
 
 const SignupForm = () => {
-  const [selectedRole, setSelectedRole] = useState("user"); // Default role is 'user'
+  const [selectedRole, setSelectedRole] = useState("student"); // Default role is 'user'
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -140,10 +140,10 @@ const SignupForm = () => {
               <div className="flex w-full mt-4">
                 {/* User Role (Left side) */}
                 <div
-                  onClick={() => setSelectedRole("user")}
-                  className={`w-1/2 p-4 rounded-lg flex items-center justify-center cursor-pointer ${selectedRole === "user" ? "bg-gray-600 text-white" : "bg-transparent text-gray-300"} hover:bg-gray-600 hover:text-white transition-all duration-300`}
+                  onClick={() => setSelectedRole("student")}
+                  className={`w-1/2 p-4 rounded-lg flex items-center justify-center cursor-pointer ${selectedRole === "student" ? "bg-gray-600 text-white" : "bg-transparent text-gray-300"} hover:bg-gray-600 hover:text-white transition-all duration-300`}
                 >
-                  <span className="text-sm">User</span>
+                  <span className="text-sm">Student</span>
                 </div>
 
                 {/* Mentor Role (Right side) */}
