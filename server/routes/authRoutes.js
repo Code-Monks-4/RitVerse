@@ -1,15 +1,13 @@
 const express = require('express');
-const { signup, login, authMiddlewares } = require('../controllers/authController');
-
 const router = express.Router();
+const { signup, login, getProfile, updateProfile } = require('../controllers/userController');
 
-// Public routes
 router.post('/signup', signup);
+
 router.post('/login', login);
 
-// Example of a protected route
-// router.get('/protected', authMiddlewares.authenticate, (req, res) => {
-//     res.status(200).json({ message: 'Welcome to the protected route!', user: req.user });
-// });
+router.get('/profile',  getProfile);
+
+router.put('/profile',  updateProfile);
 
 module.exports = router;

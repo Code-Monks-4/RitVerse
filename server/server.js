@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://namo:namokar@cluster0.s81yo.mongodb.net/RitVerse');
 
-const authRoutes = require('./routes/authRoutes'); \
+const authRoutes = require('./routes/authRoutes'); 
 const buySellRoutes = require('./routes/buySellRoutes');
 const lostFoundRoutes = require('./routes/lostFoundRoutes');
 const connectRoutes = require('./routes/connectRoutes');
